@@ -1,2 +1,5 @@
 ~$*
 __pycache__/
+*.docx
+report-assets/
+.frontend-slides/
