@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual Testing — Online Food Ordering System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--text:#c9d1d9;--dim:#6e7681;--green:#39d353;--red:#f85149;--amber:#e3b341;--blue:#58a6ff;--stage-bg:#05070a;--slide-bg:var(--bg)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--stage-bg)}
+.deck-viewport{position:fixed;inset:0;overflow:hidden;background:var(--stage-bg)}
+.deck-stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;transform-origin:0 0;background:var(--slide-bg)}
+.slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;visibility:hidden;opacity:0;background:var(--slide-bg)}
+.slide.active{visibility:visible;opacity:1}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.2s!important}}
+
+.slide{font-family:'JetBrains Mono',monospace;color:var(--text);
+  background-image:linear-gradient(rgba(57,211,83,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(57,211,83,.035) 1px,transparent 1px);background-size:48px 48px}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 2px,transparent 2px 4px)}
+.win{position:absolute;left:120px;top:110px;width:1680px;height:860px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.bar{height:56px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 24px}
+.dot{width:16px;height:16px;border-radius:50%}
+.bar span{margin-left:24px;color:var(--dim);font-size:20px}
+.body{padding:56px 72px}
+.ln{font-size:26px;line-height:1.7;opacity:0;animation:type .01s forwards}
+.p{color:var(--green)} .c{color:var(--dim)}
+h1{font-size:118px;font-weight:800;line-height:1;color:#fff;letter-spacing:-3px;margin:28px 0 16px;opacity:0;animation:up .8s cubic-bezier(.16,1,.3,1) forwards 1.3s}
+h1 em{font-style:normal;color:var(--green)}
+.sub{font-size:34px;color:var(--text);opacity:0;animation:up .8s cubic-bezier(.16,1,.3,1) forwards 1.5s}
+.team{display:flex;gap:24px;margin-top:64px;opacity:0;animation:up .8s cubic-bezier(.16,1,.3,1) forwards 1.8s}
+.team div{border:1px solid var(--line);padding:16px 26px;border-radius:8px;font-size:24px}
+.team div::before{content:"@";color:var(--green);margin-right:6px}
+.cursor{display:inline-block;width:18px;height:34px;background:var(--green);vertical-align:middle;animation:blink 1s steps(1) infinite}
+@keyframes type{to{opacity:1}}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:0}}
+</style>
+</head>
+<body>
+<div class="deck-viewport"><main class="deck-stage" id="deckStage">
+<section class="slide active">
+  <div class="win">
+    <div class="bar"><i class="dot" style="background:#f85149"></i><i class="dot" style="background:#e3b341"></i><i class="dot" style="background:#39d353"></i><span>team-04 — manual-test-report</span></div>
+    <div class="body">
+      <div class="ln" style="animation-delay:.2s"><span class="p">team04@qa:~$</span> run-suite --app online-food-ordering</div>
+      <div class="ln c" style="animation-delay:.6s">› black-box · white-box · unit · integration · system · acceptance</div>
+      <h1>Manual Testing<br>of an <em>Online Food<br>Ordering</em> System</h1>
+      <div class="sub">Test Scenarios → Test Cases → Execution → Defects → Report <span class="cursor"></span></div>
+      <div class="team"><div>Bhaskar Lukram</div><div>Khushi Raghav</div><div>Kartik Gupta</div><div>Ayush Pandey</div></div>
+    </div>
+  </div>
+</section>
+</main></div>
+<script>
+const s=document.getElementById('deckStage');function fit(){const f=Math.min(innerWidth/1920,innerHeight/1080);s.style.transform=`translate(${(innerWidth-1920*f)/2}px,${(innerHeight-1080*f)/2}px) scale(${f})`}fit();addEventListener('resize',fit);
+</script>
+</body>
+</html>
